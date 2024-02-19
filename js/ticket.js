@@ -70,7 +70,6 @@ document.getElementById('coupon-apply').addEventListener('click', function () {
 function buttonAble() {
     const phoneNumber = document.getElementById("number").value;
     const applyButton = document.getElementById('apply');
-    console.log(count);
     if (count > 0 && phoneNumber.length > 0) {
         applyButton.removeAttribute('disabled');
     }
