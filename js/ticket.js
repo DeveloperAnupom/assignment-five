@@ -37,6 +37,13 @@ document.getElementById('coupon-apply').addEventListener('click', function () {
     if (couponInput.value === "NEW15") {
         const discount = totalPrice * 0.15;
         grandTotal.innerText = totalPrice - discount;
+        const discountText = document.getElementById('discount');
+        const h3 = document.createElement("h3");
+        h3.innerText = "Your Discount Amount Is : ";
+        const h32 = document.createElement("h3");
+        h32.innerText = discount;
+        discountText.appendChild(h3);
+        discountText.appendChild(h32);
     }
     else if (couponInput.value === "Couple 20") {
         const discount = totalPrice * 0.2;
