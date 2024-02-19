@@ -4,6 +4,7 @@ let seatAhead = 40;
 for (const seat of allSeats) {
     seat.addEventListener("click", function (event) {
         count = count + 1;
+        buttonAble()
         seatAhead = seatAhead - 1;
         if (count <= 4) {
             seat.classList.add('bg-[#1DD100]');
@@ -46,40 +47,38 @@ document.getElementById('coupon-apply').addEventListener('click', function () {
         discountText.appendChild(h32);
     }
     else if (couponInput.value === "Couple 20") {
-        const discount = totalPrice * 0.2;
-        grandTotal.innerText = totalPrice - discount;
+        const discount2 = totalPrice * 0.2;
+        grandTotal.innerText = totalPrice - discount2;
         const discountText = document.getElementById('discount');
         const h3 = document.createElement("h3");
         h3.innerText = "Your Discount Amount Is : ";
         const h32 = document.createElement("h3");
-        h32.innerText = discount;
+        h32.innerText = discount2;
         discountText.appendChild(h3);
         discountText.appendChild(h32);
-
     }
     else {
         grandTotal.innerText = totalPrice;
     }
-
-} ,{ once: true })
-
+}, { once: true })
 
 
 
-const phoneNumber = document.getElementById("number").value;
-const email = document.getElementById("email").value;
-const applyButton = document.getElementById('apply');
+
+
 
 function buttonAble() {
-    if (count > 0 && phoneNumber > 0 && email.length > 0) {
-        applyButton.setAttribute('disabled', true)
-    }
-    else {
+    const phoneNumber = document.getElementById("number").value;
+    const applyButton = document.getElementById('apply');
+    console.log(count);
+    if (count > 0 && phoneNumber.length > 0) {
         applyButton.removeAttribute('disabled');
     }
+
 }
 
 
-
-
+document.getElementById('reset-button').addEventListener('click', function () {
+    window.location.reload()
+})
 
